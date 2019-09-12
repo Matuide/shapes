@@ -9,6 +9,7 @@ namespace shapes
             string user;
             bool valid;
             string password;
+            //string shape;
             Console.WriteLine("Enter your username:  ");
             user = Console.ReadLine();
 
@@ -27,7 +28,23 @@ namespace shapes
             } while (valid == false);
 
             Console.WriteLine(" good password");
+
+
+            
+
+            askshape();
+
+            
+
+
         }
+
+
+
+
+
+
+
         static bool PasswordCheck(string password ){
             bool valid = false;
             int passwordlength;
@@ -46,7 +63,7 @@ namespace shapes
                     lowercase = lowercase + 1;
 
                 }
-                if (password[n] >= '!' && password[n] <= '@')
+                if (password[n] >= '!' && password[n] <= '@' || password[n] >= '[' && password[n] <= '`')
                 {
                     specialdigit = specialdigit + 1;
                 }
@@ -56,5 +73,55 @@ namespace shapes
                 valid = true;
             }
             return valid;
+        }
+
+
+
+
+
+
+
+        static string askshape()
+        {
+
+
+            string choice;
+           // choice.ToString;
+            Console.WriteLine("what shape do you want to practice:         " +
+               "Press 1 for triangle:      " +
+                "press 2 for rectangle:      " +
+                "press 3 for circle:      ");
+             
+            
+          choice = Console.ReadLine();
+
+               
+
+
+
+
+
+
+
+
+
+            if (choice == "1")
+            {
+
+            Console.WriteLine("you picked triangle");
+            }
+            if (choice == "2")
+            {
+
+                Console.WriteLine("you picked rectangle");
+            }
+            if (choice == "3")
+            {
+
+                Console.WriteLine("you picked circle");
+
+            }
+
+            return choice;
         }
 }} 
