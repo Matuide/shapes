@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace shapes
 {
@@ -27,14 +28,30 @@ namespace shapes
 
             } while (valid == false);
 
-            Console.WriteLine(" good password");
+                Console.WriteLine(" good password");
 
 
-            
+            StreamWriter Location = new StreamWriter(@"G:\New folder\mattneedsafile.csv");
+            Location.WriteLine(user + ", " + password);
+            Location.Close();
+                
+                
+                
+                
+              if(askshape() == "1")
+            {
 
-            askshape();
 
-            
+
+
+
+
+
+
+
+            }
+          //  return Choice();
+           // Console.WriteLine(Choice);
 
 
         }
@@ -71,6 +88,7 @@ namespace shapes
             if (lowercase >= 1 && uppercase >= 1 && specialdigit >= 1 && passwordlength >= 8)
             {
                 valid = true;
+                
             }
             return valid;
         }
