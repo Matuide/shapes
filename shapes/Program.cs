@@ -8,9 +8,17 @@ namespace shapes
         static void Main(string[] args)
         {
             string user;
+            int points = 0;
+            int MAX_points = 0;
+            string Continue;
+          // bool account;
             bool valid;
             string password;
-            //string shape;
+           
+           // Console.WriteLine("Do You have an account");
+           // account = Console.ReadLine();
+           // if (account = false)
+          
             Console.WriteLine("Enter your username:  ");
             user = Console.ReadLine();
 
@@ -25,44 +33,23 @@ namespace shapes
                     Console.WriteLine(" try again");
                 }
 
-
             } while (valid == false);
 
                 Console.WriteLine(" good password");
 
-
-            StreamWriter Location = new StreamWriter(@"G:\New folder\mattneedsafile.csv");
-            Location.WriteLine(user + ", " + password);
+            StreamWriter Location = new StreamWriter(@"G:\New folder\mattneedsafile.csv", true);
+            Location.WriteLine(user + "," + password);
             Location.Close();
-                
-                
-                
-                
+            
               if(askshape() == "1")
             {
-
-
-
-
-
-
-
-
-
+                playtriangle();
             }
-          //  return Choice();
-           // Console.WriteLine(Choice);
-
-
         }
 
 
-
-
-
-
-
-        static bool PasswordCheck(string password ){
+        static bool PasswordCheck(string password )
+        {
             bool valid = false;
             int passwordlength;
             int uppercase = 0;
@@ -93,12 +80,6 @@ namespace shapes
             return valid;
         }
 
-
-
-
-
-
-
         static string askshape()
         {
 
@@ -114,14 +95,6 @@ namespace shapes
           choice = Console.ReadLine();
 
                
-
-
-
-
-
-
-
-
 
             if (choice == "1")
             {
@@ -142,4 +115,11 @@ namespace shapes
 
             return choice;
         }
-}} 
+
+        static void playtriangle()
+        {
+            int points = 0;
+            Console.WriteLine("You got {0} points", points);
+        }
+    }
+} 
